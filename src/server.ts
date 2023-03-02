@@ -1,6 +1,6 @@
 import cors from 'cors';
 import express from 'express';
-import { phoneRouter } from './route/phones';
+import {phoneRouter} from './route/phones';
 
 export interface Phone {
   id: number;
@@ -21,10 +21,7 @@ export interface Phone {
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: 'http://127.0.0.1:5174',
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 app.use('/phones', phoneRouter);
 
