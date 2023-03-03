@@ -43,6 +43,7 @@ export const getPhones = async (req: Request, res: Response) => {
     };
 
     const result = {
+      totalPhones: totalItems,
       pages: totalPages,
       prev: prevPage,
       next: nextPage,
