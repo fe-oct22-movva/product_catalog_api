@@ -1,23 +1,26 @@
 import {PhoneType} from '../server';
 
 export const toSortData = (
-  dataFromJson: PhoneType[],
+  phonesFromServer: PhoneType[],
   sortBy: string | unknown
 ) => {
   if (sortBy === 'fromNewest') {
-    dataFromJson = dataFromJson.sort((a, b) => b.year - a.year);
+    phonesFromServer = phonesFromServer.sort((a, b) => b.year - a.year);
   }
   if (sortBy === 'fromOldest') {
-    dataFromJson = dataFromJson.sort((a, b) => a.year - b.year);
+    phonesFromServer = phonesFromServer.sort((a, b) => a.year - b.year);
+  }
+  if (sortBy === 'Alphabetically') {
+    phonesFromServer = phonesFromServer.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   if (sortBy === 'fromHighPrice') {
-    dataFromJson = dataFromJson.sort((a, b) => b.fullPrice - a.fullPrice);
+    phonesFromServer = phonesFromServer.sort((a, b) => b.fullPrice - a.fullPrice);
   }
 
   if (sortBy === 'fromLowPrice') {
-    dataFromJson = dataFromJson.sort((a, b) => a.fullPrice - b.fullPrice);
+    phonesFromServer = phonesFromServer.sort((a, b) => a.fullPrice - b.fullPrice);
   }
 
-  return dataFromJson;
+  return phonesFromServer;
 };
