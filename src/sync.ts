@@ -1,11 +1,14 @@
-import {Phone} from './models/phone';
-import {dbInit} from './utils/dbInit';
+// import path from 'path';
+// import { Phone } from './models/phone';
+// import { dbInit } from './utils/dbInit';
 
-const sync = async () => {
-  const sequelize = dbInit();
+// const sync = async () => {
 
-  await sequelize.authenticate();
-  await Phone.sync({force: true});
-};
+//   // await sequelize.authenticate();
+// await Phone.sync({ alter: true });
 
-sync();
+//   console.log(await Phone.findAll());
+
+// };
+
+// sync();

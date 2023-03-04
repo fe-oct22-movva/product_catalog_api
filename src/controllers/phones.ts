@@ -1,57 +1,62 @@
-import {Request, Response} from 'express';
+import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
-import {Phone} from '../server';
-import {toSortData} from '../utils/helpers';
+import { Phone } from '../models/phone';
+import { PhoneType } from '../server';
+// import { toSortData } from '../utils/helpers';
 
 const absolutePath = path.join(__dirname, '../data/phones.json');
 
 export const getPhones = async (req: Request, res: Response) => {
-  fs.readFile(absolutePath, (error, data) => {
-    if (error) {
-      res.send(error);
-    }
 
-    let dataFromJson: Phone[] = JSON.parse(data.toString());
+  const data = await Phone.findAll();
 
-    const sortBy = (req.query.sortBy as string) || 'fromNewest';
+  res.send(data);
+  // fs.readFile(absolutePath, (error, data) => {
+  //   if (error) {
+  //     res.send(error);
+  //   }
 
-    if (sortBy) {
-      dataFromJson = toSortData(dataFromJson, sortBy);
-    }
+  //   let dataFromJson: PhoneType[] = JSON.parse(data.toString());
 
-    const page = parseInt((req.query.page as string) || '1');
+  //   const sortBy = (req.query.sortBy as string) || 'fromNewest';
 
-    const limit = parseInt((req.query.limit as string) || '12');
+  //   if (sortBy) {
+  //     dataFromJson = toSortData(dataFromJson, sortBy);
+  //   }
 
-    const startIndex = (page - 1) * limit;
+  //   const page = parseInt((req.query.page as string) || '1');
 
-    const endIndex = page * limit;
+  //   const limit = parseInt((req.query.limit as string) || '12');
 
-    const totalItems = dataFromJson.length;
+  //   const startIndex = (page - 1) * limit;
 
-    const totalPages = Math.ceil(totalItems / limit);
+  //   const endIndex = page * limit;
 
-    const prevPage = {
-      page: page - 1,
-      limit: limit,
-    };
+  //   const totalItems = dataFromJson.length;
 
-    const nextPage = {
-      page: page + 1,
-      limit: limit,
-    };
+  //   const totalPages = Math.ceil(totalItems / limit);
 
-    const result = {
-      totalPhones: totalItems,
-      pages: totalPages,
-      prev: prevPage,
-      next: nextPage,
-      result: dataFromJson.slice(startIndex, endIndex),
-    };
+  //   const prevPage = {
+  //     page: page - 1,
+  //     limit: limit,
+  //   };
 
-    res.send(result);
-  });
+  //   const nextPage = {
+  //     page: page + 1,
+  //     limit: limit,
+  //   };
+
+  //   const result = {
+  //     totalPhones: totalItems,
+  //     pages: totalPages,
+  //     prev: prevPage,
+  //     next: nextPage,
+  //     result: dataFromJson.slice(startIndex, endIndex),
+  //   };
+
+  //   res.send(result);
+  // });
 };
 
 export const getOne = (req: Request, res: Response) => {
@@ -64,7 +69,7 @@ export const getOne = (req: Request, res: Response) => {
       return;
     }
 
-    const dataFromJson: Phone[] = JSON.parse(data.toString());
+    const dataFromJson: PhoneType[] = JSON.parse(data.toString());
 
     const foundPhone = dataFromJson.find((phone) => +phone.id === +phoneId);
 

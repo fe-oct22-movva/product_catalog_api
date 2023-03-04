@@ -9,7 +9,6 @@
     "lint": "eslint . --ignore-path .gitignore --fix",
     "test": "npm run format && npm run lint",
     "prepare": "husky install",
-    "sync-db": "ts-node src/sync.ts",
     "sequelize": "ts-node src/utils/dbInit.ts"
   },
   "keywords": [],
