@@ -1,6 +1,9 @@
-import { PhoneType } from '../server';
+import {PhoneType} from '../server';
 
-export const toSortData = (dataFromJson: PhoneType[], sortBy: string | unknown) => {
+export const toSortData = (
+  dataFromJson: PhoneType[],
+  sortBy: string | unknown
+) => {
   if (sortBy === 'fromNewest') {
     dataFromJson = dataFromJson.sort((a, b) => b.year - a.year);
   }

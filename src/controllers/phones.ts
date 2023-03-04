@@ -1,14 +1,13 @@
-import { Request, Response } from 'express';
+import {Request, Response} from 'express';
 import fs from 'fs';
 import path from 'path';
-import { Phone } from '../models/phone';
-import { PhoneType } from '../server';
+import {Phone} from '../models/phone';
+import {PhoneType} from '../server';
 // import { toSortData } from '../utils/helpers';
 
 const absolutePath = path.join(__dirname, '../data/phones.json');
 
 export const getPhones = async (req: Request, res: Response) => {
-
   const data = await Phone.findAll();
 
   res.send(data);

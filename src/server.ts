@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
-import { phoneRouter } from './route/phones';
-import { dbInit } from './utils/dbInit';
+import {phoneRouter} from './route/phones';
+import {dbInit} from './utils/dbInit';
 
 dbInit();
 export interface PhoneType {
