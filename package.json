@@ -8,7 +8,8 @@
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore --fix",
     "test": "npm run format && npm run lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sequelize": "ts-node src/db/dbInit.ts"
   },
   "keywords": [],
   "author": "",

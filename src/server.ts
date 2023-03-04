@@ -22,8 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
-app.use(express.json());
-app.use('/phones', phoneRouter);
+app.use('/phones', express.json(), phoneRouter);
 
 app.listen(PORT, () => {
   console.log(`API is ready on http://localhost:${PORT}`);
