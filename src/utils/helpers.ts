@@ -1,4 +1,4 @@
-import {PhoneType} from '../server';
+import {PhoneType} from '../types/phone';
 
 export const toSortData = (
   phonesFromServer: PhoneType[],
