@@ -5,7 +5,7 @@
 // const sync = async () => {
 
 //   // await sequelize.authenticate();
-// await Phone.sync({ alter: true });
+// // await Phone.sync({ alter: true });
 
 //   console.log(await Phone.findAll());
 
