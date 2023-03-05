@@ -1,9 +1,7 @@
 import {Phone} from '../models/phone';
 import {PhoneType} from '../types/phone';
 import {toSortData} from '../utils/helpers';
-import { PhoneDetail } from '../models/phoneDetail';
-import fs from 'fs';
-import path from 'path';
+import {PhoneDetail} from '../models/phoneDetail';
 
 export const getAllPhones = async (
   pageQuery: string,

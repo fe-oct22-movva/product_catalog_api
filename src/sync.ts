@@ -1,6 +1,6 @@
 import {PhoneDetail} from './models/phoneDetail';
-import path from 'path';
-import fs from 'fs';
+// import path from 'path';
+// import fs from 'fs';
 import {dbInit} from './utils/dbInit';
 
 const sync = async () => {
