@@ -1,4 +1,4 @@
 export interface Desctiption {
-  title: string,
-  text: string[],
+  title: string;
+  text: string[];
 }

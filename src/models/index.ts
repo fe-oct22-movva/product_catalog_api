@@ -1,7 +1,4 @@
 import {Phone} from './phone';
-import { PhoneDetail } from './phoneDetail';
+import {PhoneDetail} from './phoneDetail';
 
-export const models = [
-  Phone,
-  PhoneDetail
-];
+export const models = [Phone, PhoneDetail];

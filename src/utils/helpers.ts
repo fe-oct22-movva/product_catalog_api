@@ -11,15 +11,21 @@ export const toSortData = (
     phonesFromServer = phonesFromServer.sort((a, b) => a.year - b.year);
   }
   if (sortBy === 'Alphabetically') {
-    phonesFromServer = phonesFromServer.sort((a, b) => a.name.localeCompare(b.name));
+    phonesFromServer = phonesFromServer.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
   }
 
   if (sortBy === 'fromHighPrice') {
-    phonesFromServer = phonesFromServer.sort((a, b) => b.fullPrice - a.fullPrice);
+    phonesFromServer = phonesFromServer.sort(
+      (a, b) => b.fullPrice - a.fullPrice
+    );
   }
 
   if (sortBy === 'fromLowPrice') {
-    phonesFromServer = phonesFromServer.sort((a, b) => a.fullPrice - b.fullPrice);
+    phonesFromServer = phonesFromServer.sort(
+      (a, b) => a.fullPrice - b.fullPrice
+    );
   }
 
   return phonesFromServer;

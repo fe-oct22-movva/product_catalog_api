@@ -1,8 +1,12 @@
-import { Phone } from '../models/phone';
-import { PhoneType } from '../server';
-import { toSortData } from '../utils/helpers';
+import {Phone} from '../models/phone';
+import {PhoneType} from '../server';
+import {toSortData} from '../utils/helpers';
 
-export const getAllPhones = async (pageQuery: string, limitQuery: string, sortQuery: string) => {
+export const getAllPhones = async (
+  pageQuery: string,
+  limitQuery: string,
+  sortQuery: string
+) => {
   let phones: PhoneType[] = await Phone.findAll();
 
   const sortBy = (sortQuery as string) || 'fromNewest';
@@ -44,6 +48,6 @@ export const getAllPhones = async (pageQuery: string, limitQuery: string, sortQu
   return result;
 };
 
-export const getOnePhone = async(phoneId:string) => {
+export const getOnePhone = async (phoneId: string) => {
   return Phone.findByPk(phoneId);
 };
