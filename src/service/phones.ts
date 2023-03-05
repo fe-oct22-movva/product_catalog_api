@@ -1,6 +1,9 @@
 import {Phone} from '../models/phone';
-import {PhoneType} from '../server';
+import {PhoneType} from '../types/phone';
 import {toSortData} from '../utils/helpers';
+import { PhoneDetail } from '../models/phoneDetail';
+import fs from 'fs';
+import path from 'path';
 
 export const getAllPhones = async (
   pageQuery: string,
@@ -49,5 +52,5 @@ export const getAllPhones = async (
 };
 
 export const getOnePhone = async (phoneId: string) => {
-  return Phone.findByPk(phoneId);
+  return await PhoneDetail.findByPk(phoneId);
 };
