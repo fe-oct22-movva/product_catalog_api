@@ -10,10 +10,10 @@ export const getAllPhones = async (
 ) => {
   let phones: PhoneType[] = await Phone.findAll();
 
-  const sortBy = (sortQuery as string) || 'fromNewest';
+  const sort = (sortQuery as string) || 'fromNewest';
 
-  if (sortBy) {
-    phones = toSortData(phones, sortBy);
+  if (sort) {
+    phones = toSortData(phones, sort);
   }
 
   const page = parseInt(pageQuery || '1');

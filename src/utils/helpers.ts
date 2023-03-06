@@ -2,27 +2,27 @@ import {PhoneType} from '../types/phone';
 
 export const toSortData = (
   phonesFromServer: PhoneType[],
-  sortBy: string | unknown
+  sort: string | unknown
 ) => {
-  if (sortBy === 'fromNewest') {
+  if (sort === 'fromNewest') {
     phonesFromServer = phonesFromServer.sort((a, b) => b.year - a.year);
   }
-  if (sortBy === 'fromOldest') {
+  if (sort === 'fromOldest') {
     phonesFromServer = phonesFromServer.sort((a, b) => a.year - b.year);
   }
-  if (sortBy === 'Alphabetically') {
+  if (sort === 'Alphabetically') {
     phonesFromServer = phonesFromServer.sort((a, b) =>
       a.name.localeCompare(b.name)
     );
   }
 
-  if (sortBy === 'fromHighPrice') {
+  if (sort === 'fromHighPrice') {
     phonesFromServer = phonesFromServer.sort(
       (a, b) => b.fullPrice - a.fullPrice
     );
   }
 
-  if (sortBy === 'fromLowPrice') {
+  if (sort === 'fromLowPrice') {
     phonesFromServer = phonesFromServer.sort(
       (a, b) => a.fullPrice - b.fullPrice
     );

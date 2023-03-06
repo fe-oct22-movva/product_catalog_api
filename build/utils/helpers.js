@@ -1,24 +1,24 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', {value: true});
 exports.toSortData = void 0;
-const toSortData = (phonesFromServer, sortBy) => {
-  if (sortBy === 'fromNewest') {
+const toSortData = (phonesFromServer, sort) => {
+  if (sort === 'fromNewest') {
     phonesFromServer = phonesFromServer.sort((a, b) => b.year - a.year);
   }
-  if (sortBy === 'fromOldest') {
+  if (sort === 'fromOldest') {
     phonesFromServer = phonesFromServer.sort((a, b) => a.year - b.year);
   }
-  if (sortBy === 'Alphabetically') {
+  if (sort === 'Alphabetically') {
     phonesFromServer = phonesFromServer.sort((a, b) =>
       a.name.localeCompare(b.name)
     );
   }
-  if (sortBy === 'fromHighPrice') {
+  if (sort === 'fromHighPrice') {
     phonesFromServer = phonesFromServer.sort(
       (a, b) => b.fullPrice - a.fullPrice
     );
   }
-  if (sortBy === 'fromLowPrice') {
+  if (sort === 'fromLowPrice') {
     phonesFromServer = phonesFromServer.sort(
       (a, b) => a.fullPrice - b.fullPrice
     );

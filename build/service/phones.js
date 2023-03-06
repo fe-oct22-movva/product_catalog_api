@@ -40,9 +40,9 @@ const phoneDetail_1 = require('../models/phoneDetail');
 const getAllPhones = (pageQuery, limitQuery, sortQuery) =>
   __awaiter(void 0, void 0, void 0, function* () {
     let phones = yield phone_1.Phone.findAll();
-    const sortBy = sortQuery || 'fromNewest';
-    if (sortBy) {
-      phones = (0, helpers_1.toSortData)(phones, sortBy);
+    const sort = sortQuery || 'fromNewest';
+    if (sort) {
+      phones = (0, helpers_1.toSortData)(phones, sort);
     }
     const page = parseInt(pageQuery || '1');
     const limit = parseInt(limitQuery || phones.length.toString());
