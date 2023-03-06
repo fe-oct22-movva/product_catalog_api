@@ -18,7 +18,7 @@ export const getAllPhones = async (
 
   const page = parseInt(pageQuery || '1');
 
-  const limit = parseInt(limitQuery || '71');
+  const limit = parseInt(limitQuery || phones.length.toString());
 
   const startIndex = (page - 1) * limit;
 
