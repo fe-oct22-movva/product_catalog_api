@@ -4,25 +4,25 @@ export const toSortData = (
   phonesFromServer: PhoneType[],
   sort: string | unknown
 ) => {
-  if (sort === 'fromNewest') {
+  if (sort === 'newest') {
     phonesFromServer = phonesFromServer.sort((a, b) => b.year - a.year);
   }
-  if (sort === 'fromOldest') {
+  if (sort === 'oldest') {
     phonesFromServer = phonesFromServer.sort((a, b) => a.year - b.year);
   }
-  if (sort === 'Alphabetically') {
+  if (sort === 'alphabetically') {
     phonesFromServer = phonesFromServer.sort((a, b) =>
       a.name.localeCompare(b.name)
     );
   }
 
-  if (sort === 'fromHighPrice') {
+  if (sort === 'moreExpensive') {
     phonesFromServer = phonesFromServer.sort(
       (a, b) => b.fullPrice - a.fullPrice
     );
   }
 
-  if (sort === 'fromLowPrice') {
+  if (sort === 'cheapest') {
     phonesFromServer = phonesFromServer.sort(
       (a, b) => a.fullPrice - b.fullPrice
     );
