@@ -45,7 +45,7 @@ const getAllPhones = (pageQuery, limitQuery, sortQuery) =>
       phones = (0, helpers_1.toSortData)(phones, sortBy);
     }
     const page = parseInt(pageQuery || '1');
-    const limit = parseInt(limitQuery || '12');
+    const limit = parseInt(limitQuery || phones.length.toString());
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
     const totalPhones = phones.length;
