@@ -6,97 +6,79 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Phone = void 0;
+exports.Tablet = void 0;
 /* eslint-disable indent */
 const sequelize_1 = require("sequelize");
 const sequelize_typescript_1 = require("sequelize-typescript");
-let Phone = class Phone extends sequelize_typescript_1.Model {
+let Tablet = class Tablet extends sequelize_typescript_1.Model {
 };
 __decorate([
     sequelize_typescript_1.PrimaryKey,
     sequelize_typescript_1.AutoIncrement,
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER
     })
-], Phone.prototype, "id", void 0);
+], Tablet.prototype, "id", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_1.DataTypes.STRING,
     })
-], Phone.prototype, "category", void 0);
+], Tablet.prototype, "category", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_1.DataTypes.STRING,
     })
-], Phone.prototype, "phoneId", void 0);
+], Tablet.prototype, "name", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.STRING,
+        type: sequelize_1.DataTypes.INTEGER
     })
-], Phone.prototype, "itemId", void 0);
-__decorate([
-    (0, sequelize_typescript_1.AllowNull)(false),
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.STRING,
-    })
-], Phone.prototype, "name", void 0);
+], Tablet.prototype, "fullPrice", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_1.DataTypes.INTEGER,
     })
-], Phone.prototype, "fullPrice", void 0);
+], Tablet.prototype, "price", void 0);
+__decorate([
+    (0, sequelize_typescript_1.AllowNull)(false),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_1.DataTypes.STRING,
+    })
+], Tablet.prototype, "screen", void 0);
+__decorate([
+    (0, sequelize_typescript_1.AllowNull)(false),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_1.DataTypes.STRING,
+    })
+], Tablet.prototype, "capacity", void 0);
+__decorate([
+    (0, sequelize_typescript_1.AllowNull)(false),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_1.DataTypes.STRING,
+    })
+], Tablet.prototype, "ram", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_1.DataTypes.INTEGER,
     })
-], Phone.prototype, "price", void 0);
+], Tablet.prototype, "year", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_1.DataTypes.STRING,
     })
-], Phone.prototype, "screen", void 0);
-__decorate([
-    (0, sequelize_typescript_1.AllowNull)(false),
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.STRING,
-    })
-], Phone.prototype, "capacity", void 0);
-__decorate([
-    (0, sequelize_typescript_1.AllowNull)(false),
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.STRING,
-    })
-], Phone.prototype, "color", void 0);
-__decorate([
-    (0, sequelize_typescript_1.AllowNull)(false),
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.STRING,
-    })
-], Phone.prototype, "ram", void 0);
-__decorate([
-    (0, sequelize_typescript_1.AllowNull)(false),
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.INTEGER,
-    })
-], Phone.prototype, "year", void 0);
-__decorate([
-    (0, sequelize_typescript_1.AllowNull)(false),
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_1.DataTypes.STRING,
-    })
-], Phone.prototype, "image", void 0);
-Phone = __decorate([
+], Tablet.prototype, "image", void 0);
+Tablet = __decorate([
     (0, sequelize_typescript_1.Table)({
-        tableName: 'phones',
+        tableName: 'tablets',
         createdAt: false,
         updatedAt: false,
     })
-], Phone);
-exports.Phone = Phone;
+], Tablet);
+exports.Tablet = Tablet;

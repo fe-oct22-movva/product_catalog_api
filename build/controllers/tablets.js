@@ -9,23 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.phoneController = exports.getOne = exports.getPhones = void 0;
-const phones_1 = require("../service/phones");
-const getPhones = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const phonesFromServer = yield (0, phones_1.getAllPhones)(req.query.page, req.query.limit, req.query.sortBy);
-    res.send(phonesFromServer);
+exports.tabletController = exports.getTablets = void 0;
+const tablets_1 = require("../service/tablets");
+const getTablets = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const tabletsFromServer = yield (0, tablets_1.getAllTablets)();
+    console.log('controllers');
+    res.send(tabletsFromServer);
 });
-exports.getPhones = getPhones;
-const getOne = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { phoneId } = req.params;
-    const foundPhone = yield (0, phones_1.getOnePhone)(phoneId);
-    if (!foundPhone) {
-        res.sendStatus(404);
-    }
-    res.send(foundPhone);
-});
-exports.getOne = getOne;
-exports.phoneController = {
-    getPhones: exports.getPhones,
-    getOne: exports.getOne,
+exports.getTablets = getTablets;
+exports.tabletController = {
+    getTablets: exports.getTablets,
 };
